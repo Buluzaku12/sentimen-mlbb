@@ -9,16 +9,19 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Unduh model dan vectorizer jika belum ada
-MODEL_PATH = "https://drive.google.com/file/d/1otEPccAqWgorX8hA2FU29h6kMAz2odDn/view?usp=drive_link"
-VECTORIZER_PATH = "https://drive.google.com/file/d/1EAA9axbR68YmjomvUB9KfZX3PBJl6Q0a/view?usp=drive_link"
+MODEL_PATH = "random_forest_model.pkl"
+VECTORIZER_PATH = "tfidf_vectorizer.pkl"
+
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1otEPccAqWgorX8hA2FU29h6kMAz2odDn"
+VECTORIZER_URL = "https://drive.google.com/uc?export=download&id=1EAA9axbR68YmjomvUB9KfZX3PBJl6Q0a"
 
 if not os.path.exists(MODEL_PATH):
     st.info("📥 Mengunduh model dari Google Drive...")
-    urllib.request.urlretrieve("https://drive.google.com/file/d/1otEPccAqWgorX8hA2FU29h6kMAz2odDn/view?usp=drive_link", MODEL_PATH, quiet=False)
+    urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
 
 if not os.path.exists(VECTORIZER_PATH):
     st.info("📥 Mengunduh vectorizer dari Google Drive...")
-    urllib.request.urlretrieve("https://drive.google.com/file/d/1EAA9axbR68YmjomvUB9KfZX3PBJl6Q0a/view?usp=drive_link", VECTORIZER_PATH, quiet=False)
+    urllib.request.urlretrieve(VECTORIZER_URL, VECTORIZER_PATH)
 
 # Fungsi pembersihan teks
 def clean_text(text):
