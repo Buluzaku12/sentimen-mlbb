@@ -4,21 +4,21 @@ import joblib
 import re
 import string
 import os
-import gdown
+import urllib.request
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Unduh model dan vectorizer jika belum ada
-MODEL_PATH = "random_forest_model.pkl"
-VECTORIZER_PATH = "tfidf_vectorizer.pkl"
+MODEL_PATH = "https://drive.google.com/file/d/1otEPccAqWgorX8hA2FU29h6kMAz2odDn/view?usp=drive_link"
+VECTORIZER_PATH = "https://drive.google.com/file/d/1EAA9axbR68YmjomvUB9KfZX3PBJl6Q0a/view?usp=drive_link"
 
 if not os.path.exists(MODEL_PATH):
     st.info("📥 Mengunduh model dari Google Drive...")
-    gdown.download("https://drive.google.com/file/d/1otEPccAqWgorX8hA2FU29h6kMAz2odDn/view?usp=drive_link", MODEL_PATH, quiet=False)
+    urllib.request.urlretrieve("https://drive.google.com/file/d/1otEPccAqWgorX8hA2FU29h6kMAz2odDn/view?usp=drive_link", MODEL_PATH, quiet=False)
 
 if not os.path.exists(VECTORIZER_PATH):
     st.info("📥 Mengunduh vectorizer dari Google Drive...")
-    gdown.download("https://drive.google.com/file/d/1EAA9axbR68YmjomvUB9KfZX3PBJl6Q0a/view?usp=drive_link", VECTORIZER_PATH, quiet=False)
+    urllib.request.urlretrieve("https://drive.google.com/file/d/1EAA9axbR68YmjomvUB9KfZX3PBJl6Q0a/view?usp=drive_link", VECTORIZER_PATH, quiet=False)
 
 # Fungsi pembersihan teks
 def clean_text(text):
