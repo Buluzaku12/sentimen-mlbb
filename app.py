@@ -9,7 +9,7 @@ import seaborn as sns
 
 # Nama file model dan vectorizer
 MODEL_PATH = "random_forest_model (4).pkl"
-VECTORIZER_PATH = "tfidf_vectorizer (1).pkl"
+VECTORIZER_PATH = "tfidf_vectorizer (2).pkl"
 
 # Fungsi pembersihan teks
 def clean_text(text):
