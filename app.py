@@ -4,24 +4,12 @@ import joblib
 import re
 import string
 import os
-import urllib.request
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Unduh model dan vectorizer jika belum ada
-MODEL_PATH = "random_forest_model.pkl"
-VECTORIZER_PATH = "tfidf_vectorizer.pkl"
-
-MODEL_URL = "https://drive.google.com/uc?export=download&id=1otEPccAqWgorX8hA2FU29h6kMAz2odDn"
-VECTORIZER_URL = "https://drive.google.com/uc?export=download&id=1EAA9axbR68YmjomvUB9KfZX3PBJl6Q0a"
-
-if not os.path.exists(MODEL_PATH):
-    st.info("📥 Mengunduh model dari Google Drive...")
-    urllib.request.urlretrieve(MODEL_URL, MODEL_PATH)
-
-if not os.path.exists(VECTORIZER_PATH):
-    st.info("📥 Mengunduh vectorizer dari Google Drive...")
-    urllib.request.urlretrieve(VECTORIZER_URL, VECTORIZER_PATH)
+# Nama file model dan vectorizer
+MODEL_PATH = "random_forest_model (4).pkl"
+VECTORIZER_PATH = "tfidf_vectorizer (1).pkl"
 
 # Fungsi pembersihan teks
 def clean_text(text):
